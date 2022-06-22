@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>My App</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <main class="flex-column">
+      <div class="graphics-container">
+        <img class="professor-graphic" src="../images/Pokemon_Professor.png" />
+      </div>
+
+      <div class="textbox">
+        <p id="text">
+          Hello there! Welcome to the world of Pokémon! My name is Oak! People call me the Pokémon Prof!
+          <!-- <a class="next-button" href="./trainer.html">Next</a> -->
+        </p>
+        <button id="arrowButton" class="text-arrow">&blacktriangledown;</button>
+      </div>
+    </main>
+
+    <script>
+      let text = document.getElementById("text");
+      let page = 0;
+      let arrowButton = document.getElementById("arrowButton");
+      arrowButton.onclick = function(){
+        if(page==0){
+            text.innerText = `This world is inhabited by creatures called Pokémon!
+          For some people, Pokémon are pets. Others use them for fights. Myself...I study Pokémon as a profession.`;
+          page = 1;
+        } else {
+            window.location.href = './trainer.html';
+        }
+      }
+    </script>
+  </body>
+</html>

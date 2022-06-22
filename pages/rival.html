@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Pokemon 101 - Gender Selection</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <main class="flex-column main-container">
+        <div class="flex-row w-100">
+            <span class="flex-column selection-box">
+                <button class="w-100" id="female">
+                    <h2>Girl</h2>
+                </button>
+                <button class="w-100" id="male">
+                    <h2>Boy</h2>
+                </button>
+            </span>
+            <span class="trainer-container h-100">
+                <img id="trainer-picture" src="../images/Girl_Trainer.png" />
+            </span>
+        </div>
+
+        <div class="textbox">
+            <p id="text">
+                Now, why don't you tell me a little bit about yourself? Are you a girl? Or are you a boy?
+            </p>
+            <button id="arrowButton" class="text-arrow">&blacktriangledown;</button>
+        </div>
+    </main>
+    <script>
+        let genderSelected = '';
+        let trainerPicture = document.getElementById('trainer-picture');
+        let girlSrc = '../images/Girl_Trainer.png';
+        let boySrc = '../images/Boy_Trainer.png';
+
+        function setGender(gender) {
+            genderSelected = gender;
+            if(gender=='female'){
+                trainerPicture.src = girlSrc;
+            } else {
+                trainerPicture.src = boySrc;
+            }
+        }
+
+        let female = document.getElementById('female');
+        female.onclick = () => setGender('female');
+
+        let male = document.getElementById('male');
+        male.onclick = () => setGender('male');
+        
+        let continueButton = document.getElementById('arrowButton');
+        continueButton.onclick = function() {
+            if(genderSelected){
+                sessionStorage.setItem('pokemonTrainerGender', genderSelected);
+                window.location.href = './pokemon.html';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,59 +1,77 @@
 <html>
-    <head>
-        <title>My App</title>
-        <meta charset="UTF-8"/>
-        <link rel="stylesheet" href="../styles.css">
-    </head>
-    <body>
-        <h1 class="title">I am a <span id="selection">____</span></h1>
-        <div class="flexbox-container">
-            <span id="female" class="starter-option pink">
-                <h2>Girl</h2>
-                <img src="../images/Girl_Trainer.png"/>
-            </span>  
-            <span id="male" class="starter-option water">
-                <h2>Boy</h2>
-                <img src="../images/Boy_Trainer.png"/>
+
+<head>
+    <title>Pokemon 101 - Gender Selection</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+    <main class="flex-column main-container">
+        <div id="gender-selection" class="flex-row w-100">
+            <span class="flex-column selection-box">
+                <button class="w-100" id="female">
+                    <h2>Girl</h2>
+                </button>
+                <button class="w-100" id="male">
+                    <h2>Boy</h2>
+                </button>
+            </span>
+            <span class="trainer-container h-100">
+                <img id="trainer-picture" src="../images/Girl_Trainer.png" />
             </span>
         </div>
-        <div class="flexbox-container button-container">
-            <button class="next-button" id="previousButton" > &leftarrow; Previous</button>  
-            <button class="next-button" disabled id="continueButton" >Next &rightarrow;</button>
+
+        <div id="input-selection" class="flex-row w-100 d-none">
+
         </div>
 
-        <script>
-            let selection = document.getElementById('selection');
-            let previousButton = document.getElementById('previousButton');
-            let continueButton = document.getElementById('continueButton');
+        <div class="textbox">
+            <p id="text">
+                Now, why don't you tell me a little bit about yourself? Are you a girl? Or are you a boy?
+            </p>
+            <button id="arrowButton" class="text-arrow">&blacktriangledown;</button>
+        </div>
+    </main>
+    <script>
+  
+        let trainerPicture = document.getElementById('trainer-picture');
+        let girlSrc = '../images/Girl_Trainer.png';
+        let boySrc = '../images/Boy_Trainer.png';
 
-            let female = document.getElementById('female');
-
-            female.onclick = () => setGirl();
-            
-            function setGirl(){
-                selection.innerHTML = 'Girl';
-                female.classList.add('chosen');
-                male.classList.remove('chosen');
-                continueButton.removeAttribute('disabled');
+        let genderSelected = '';
+        function setGender(gender) {
+            genderSelected = gender;
+            if(gender=='female'){
+                trainerPicture.src = girlSrc;
+            } else {
+                trainerPicture.src = boySrc;
             }
+        }
 
-            let male = document.getElementById('male');
+        let female = document.getElementById('female');
+        female.onclick = () => setGender('female');
 
-            male.onclick = function(){
-                selection.innerHTML = 'Boy';
-                male.classList.add('chosen');
-                female.classList.remove('chosen');
-                continueButton.removeAttribute('disabled');
+        let male = document.getElementById('male');
+        male.onclick = () => setGender('male');
+
+        let nameSelected = '';
+
+
+        
+        let continueButton = document.getElementById('arrowButton');
+        continueButton.onclick = function() {
+            if(nameSelected){
+
+            } else if(genderSelected){
+                alert(genderSelected);
+                let genderSelection = document.getElementById('gender-selection');
+                genderSelection.classList.add('d-none');
+                let nameSelection = document.getElementById('input-selection');
+                nameSelection.classList.remove('d-none');
             }
+        }
+    </script>
+</body>
 
-            continueButton.onclick = function () {
-                sessionStorage.setItem('pokemonTrainerGender',selection.innerHTML);
-                window.location.href = './pokemon.html';
-            }
-
-            previousButton.onclick = function() {
-                window.location.href = './intro.html';
-            }
-        </script>
-    </body>
 </html>

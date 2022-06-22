@@ -1,0 +1,31 @@
+{
+  "name": "pokemon101",
+  "version": "1.0.0",
+  "description": "A quick demo for basic html/css/js and a taste of npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dennispark0/Pokemon101.git"
+  },
+  "keywords": [
+    "VanillaJS",
+    "Javascript",
+    "HTML",
+    "CSS",
+    "Tutorial",
+    "Intro",
+    "Pokemon"
+  ],
+  "author": "Misaki Kitagawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dennispark0/Pokemon101/issues"
+  },
+  "homepage": "https://github.com/dennispark0/Pokemon101#readme",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}

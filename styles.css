@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
-/* * {
+* {
     box-sizing: border-box;
-} */
+}
 body,html {
     font-family: 'Nunito Sans', sans-serif;
     background-color: #414042;
@@ -83,6 +83,16 @@ button {
     background-color: transparent;
 }
 
+#input-selection{
+    font-size:32px;
+}
+
+input {
+    padding:16px;
+    width:100%;
+    font-size:32px;
+}
+
 .textbox {
     position:relative;
     width: 100%;
@@ -130,7 +140,7 @@ button {
     border-radius: 4px;
 }
 
-.starter-option.grass {
+/* .starter-option.grass {
     color:#2d8c6d;
     background-color: #78d2b2;
 }
@@ -148,33 +158,4 @@ button {
 .starter-option.pink {
     background-color: #ffcae5;
     color:#ff48a5;
-}
-
-.starter-option:hover, .starter-option.chosen {
-    margin:0px;
-    border-width:8px;
-    cursor: pointer;
-    filter:brightness(120%);
-}
-
-.next-button {
-    display: flex;
-    margin:auto;
-    margin-top:30px;
-    width:80%;
-    font-size: 32px;
-    justify-content: center;
-}
-
-.next-button:visited{
-    color:white;
-}
-
-.button-container{
-    justify-content: space-between;
-}
-.button-container .next-button{
-    margin:0px;
-    margin-top:30px;
-    width:25%;
-}
+} */

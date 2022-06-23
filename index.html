@@ -16,20 +16,5 @@
         <button id="arrowButton" onclick="handleClick()" class="text-arrow">&blacktriangledown;</button>
       </div>
     </main>
-
-    <script>
-      let text = document.getElementById("text");
-      let page = 0;
-      let arrowButton = document.getElementById("arrowButton");
-       function handleClick(){
-        if(page==0){
-            text.innerText = `This world is inhabited by creatures called Pokémon!
-          For some people, Pokémon are pets. Others use them for fights. Myself...I study Pokémon as a profession.`;
-          page = 1;
-        } else {
-            window.location.href = '/pages/trainer/trainer.html';
-        }
-      }
-    </script>
   </body>
 </html>
